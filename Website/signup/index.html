@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>noteX - Login</title>
+	<title>noteX - Sign Up</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -35,11 +35,16 @@
 				<span class="login100-form-title p-b-41">
 					noteX
 				</span>
-				<form method="post" class="login100-form validate-form p-b-33 p-t-5">
+				<form method="POST" class="login100-form validate-form p-b-33 p-t-5">
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
 						<input class="input100" type="text" name="usernameInput" placeholder="Username">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Enter email">
+						<input class="input100" type="email" name="emailInput" placeholder="Email">
+						<span class="focus-input100" data-placeholder="&#xe818;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
@@ -47,18 +52,23 @@
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
 
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" type="password" name="passwordInput" placeholder="Password Again">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+
 					<div class="container-login100-form-btn m-t-32">
-						<button name="loginButton" class="login100-form-btn">
-							Login
+						<button name="signupButton" class="login100-form-btn">
+							Sign Up
 						</button>
 					</div>
 
 					<div class="container-login100-form-btn m-t-32">
-						You need an account?
+						Already have an account?
 					</div>
 
 					<div class="container-login100-form-btn m-t-5">
-						<a class="login-signup-now-button fs-18" href="../signup/">Register now!</a>
+						<a class="login-signup-now-button fs-18" href="../login/">Login now!</a>
 					</div>
 
 				</form>
