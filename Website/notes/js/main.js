@@ -109,6 +109,11 @@
 
     });
 
+    $("#liveToastBtn").click(function(){
+      var myAlert =document.getElementById('toast1');//select id of toast
+    var bsAlert = new bootstrap.Toast(myAlert);//inizialize it
+    bsAlert.show();//show it
+    });
 
     $(".show-add-note-section-button").click(function(){
       $(".show-add-note-section-area").css("visibility", "hidden");

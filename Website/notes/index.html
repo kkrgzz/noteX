@@ -101,6 +101,8 @@
                 Character Left: <span class="existingContentLength">500</span>
 
                 <button class="btn btn-outline-dark w-100" name="submit-add-note">Add Note</button>
+
+                <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
               </form>
             </div>
           </div>
@@ -116,7 +118,25 @@
       </div>
     </div>
 
+    <div class="position-fixed top-0 start-0 p-3 w-100" style="z-index: 11">
+      <div id="toast1" class="toast hide align-items-center text-white bg-success border-0 w-100" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body">
+          Hello, world! This is a toast message.
+         </div>
+          <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
 
+      <div id="toast2" class="toast hide align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body">
+          kemal baba online
+         </div>
+          <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
 
     <!--===============================================================================================-->
     	<script src="../Modules/jquery/jquery-3.6.0.min.js"></script>
