@@ -89,6 +89,27 @@
       $(".show-add-note-section-area").css("visibility", "visible");
     });
 
+    $(".noteTitleInput").keyup(function(){
+      var titleText = $(this).val();
+      var titleTextLen = titleText.length;
+
+      var maxTitleTextLen = 50;
+      var existingTitleLength = maxTitleTextLen - titleTextLen;
+      $(".existingTitleLength").text(existingTitleLength);
+
+    });
+
+    $(".noteContentInput").keyup(function(){
+      var titleText = $(this).val();
+      var titleTextLen = titleText.length;
+
+      var maxTitleTextLen = 500;
+      var existingTitleLength = maxTitleTextLen - titleTextLen;
+      $(".existingContentLength").text(existingTitleLength);
+
+    });
+
+
     $(".show-add-note-section-button").click(function(){
       $(".show-add-note-section-area").css("visibility", "hidden");
       $(".add-note-section").css("visibility", "visible");

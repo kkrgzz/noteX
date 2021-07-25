@@ -92,8 +92,14 @@
 
               <hr>
               <form method="post">
-                <input class="form-control mb-2" type="text" name="noteTitle" placeholder="Note Title">
-                <textarea class="form-control mb-2" name="noteContent" rows="5" cols="1" placeholder="Note Content"></textarea>
+                <div class="d-flex flex-row justify-content-between">
+                  <input class="noteTitleInput form-control mb-2 " type="text" name="noteTitle" placeholder="Note Title" maxlength="50">
+                  <span class="existingTitleLength">50</span>
+                </div>
+
+                <textarea class="noteContentInput form-control mb-2" name="noteContent" rows="5" cols="1" placeholder="Note Content" maxlength="500"></textarea>
+                Character Left: <span class="existingContentLength">500</span>
+
                 <button class="btn btn-outline-dark w-100" name="submit-add-note">Add Note</button>
               </form>
             </div>
