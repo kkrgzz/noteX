@@ -13,10 +13,10 @@
             else {
                 $(this).removeClass('has-val');
             }
-        })    
+        })
     })
-  
-  
+
+
     /*==================================================================
     [ Validate ]*/
     var input = $('.validate-input .input100');
@@ -65,7 +65,7 @@
 
         $(thisAlert).removeClass('alert-validate');
     }
-    
+
     /*==================================================================
     [ Show pass ]*/
     var showPass = 0;
@@ -80,8 +80,18 @@
             $(this).removeClass('active');
             showPass = 0;
         }
-        
+
     });
 
+
+    $(".hide-add-note-card-button-area").click(function(){
+      $(".add-note-section").css("visibility", "hidden");
+      $(".show-add-note-section-area").css("visibility", "visible");
+    });
+
+    $(".show-add-note-section-button").click(function(){
+      $(".show-add-note-section-area").css("visibility", "hidden");
+      $(".add-note-section").css("visibility", "visible");
+    });
 
 })(jQuery);

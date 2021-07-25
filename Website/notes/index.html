@@ -40,20 +40,7 @@
 
         <div class="wrap-login100 p-t-30 p-b-50">
           <div class="notes100-form-title p-b-41">
-            <div class="container-fluid">
-              <div class="row d-flex align-items-center">
-                <div class="col-10 text-left">
-                  My Notes
-                </div>
-                <div class="col-2">
-                  <a href="../addNote" class="notes100-link-component">
-                    <div class="notes100-add-note text-center">
-                      +
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
+            My Notes
           </div>
 
           <div class="wrap-notes100">
@@ -91,8 +78,39 @@
           </div>
 
         </div>
+
+        <div class="add-note-section">
+
+          <div class="card add-note-card">
+            <div class="card-body">
+              <div class="d-flex flex-row justify-content-between">
+                <h5 class="card-title user-select-none">Add Note</h5>
+                <div class="hide-add-note-card-button-area">
+                  -
+                </div>
+              </div>
+
+              <hr>
+              <form method="post">
+                <input class="form-control mb-2" type="text" name="noteTitle" placeholder="Note Title">
+                <textarea class="form-control mb-2" name="noteContent" rows="5" cols="1" placeholder="Note Content"></textarea>
+                <button class="btn btn-outline-dark w-100" name="submit-add-note">Add Note</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="show-add-note-section-area">
+          <div class="show-add-note-section-button">
+            +
+          </div>
+        </div>
+
       </div>
     </div>
+
+
 
     <!--===============================================================================================-->
     	<script src="../Modules/jquery/jquery-3.6.0.min.js"></script>
