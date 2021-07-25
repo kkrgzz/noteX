@@ -92,17 +92,20 @@
 
               <hr>
               <form method="post">
+                <label for="noteTitleInputID">Note Title: <span class="existingTitleLength">50</span></label>
+                <input id="noteTitleInputID" class="noteTitleInput form-control mb-2 " type="text" name="noteTitle" placeholder="Note Title" maxlength="50">
+
+                <label for="noteContentInputID">Note Content: <span class="existingContentLength">500</span></label>
+                <textarea id="noteContentInputID" class="noteContentInput form-control mb-2" name="noteContent" rows="5" cols="1" placeholder="Note Content" maxlength="500"></textarea>
+
+                <button class="btn btn-outline-dark w-100 mb-2" name="submit-add-note">Add Note</button>
+
                 <div class="d-flex flex-row justify-content-between">
-                  <input class="noteTitleInput form-control mb-2 " type="text" name="noteTitle" placeholder="Note Title" maxlength="50">
-                  <span class="existingTitleLength">50</span>
+                  <button type="button" class="btn btn-outline-success w-100" id="liveToastBtn">Add</button>
+                  <button type="button" class="btn btn-outline-danger w-100" id="liveToastBtn2">Delete</button>
                 </div>
 
-                <textarea class="noteContentInput form-control mb-2" name="noteContent" rows="5" cols="1" placeholder="Note Content" maxlength="500"></textarea>
-                Character Left: <span class="existingContentLength">500</span>
 
-                <button class="btn btn-outline-dark w-100" name="submit-add-note">Add Note</button>
-
-                <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
               </form>
             </div>
           </div>
@@ -119,20 +122,20 @@
     </div>
 
     <!--This div is determining the position of toast.-->
-    <div class="position-fixed top-0 start-0 p-3 w-100" style="z-index: 11">
-      <div id="toast1" class="toast hide align-items-center text-white bg-success border-0 w-100" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="position-fixed w-100 top-0 p-3 justify-content-center" style="z-index: 11">
+      <div id="toast1" class="toast hide align-items-center text-white bg-success border-0 my-2 w-100" style="max-width: 400px;" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="d-flex">
           <div class="toast-body">
-          Hello, world! This is a toast message.
+          Note added successfully.
          </div>
           <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
       </div>
 
-      <div id="toast2" class="toast hide align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div id="toast2" class="toast hide align-items-center text-white bg-danger border-0 my-2 w-100" style="max-width: 400px;" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="d-flex">
           <div class="toast-body">
-          kemal baba online
+          The another Toast message. Note deleted succesfully.
          </div>
           <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
