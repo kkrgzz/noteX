@@ -1,17 +1,15 @@
 <?php
 // Check for is user logged in or not.
-if(!isset($_POST['loginStatus'])){
-  if(!$_POST['loginStatus'] == "success"){
-    die("failed");
-  }else{
-    $db_location = "../../db.php";
+if(isset($_POST['loginStatus'])){
+  if($_POST['loginStatus'] == "success"){
+    $db_location = "../db/db.php";
     $notesTableName = "notes";
 
     include($db_location);
     $conn = new dbProcess();
-  }
-  die("failed");
-}
+  }else die("failed");
+}else die("failed");
+
 
 /*
   Add a note

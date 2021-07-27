@@ -1,8 +1,22 @@
 <?php
-$db_location = "../../db.php";
+$db_location = "../db/db.php";
 include($db_location);
 $conn = new dbProcess();
 $userTableName = "users";
+
+if(isset($_POST['deneme'])){
+  if($_POST['deneme'] == "true"){
+    $kemal = $_POST['username'];
+    $karagoz = $_POST['password'];
+    $temp = array();
+    $temp['kullaniciadi'] = $kemal;
+    $temp['sifre'] = $karagoz;
+    $user = array();
+
+    array_push($user, $temp);
+    echo json_encode($user);
+  }
+}
 
 /* 
     Login Operation
