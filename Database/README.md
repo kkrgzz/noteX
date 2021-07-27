@@ -1,3 +1,5 @@
+All the data stored in this file with this tables.
+
 There are two table: 
 ## Users Table
 
