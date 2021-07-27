@@ -12,7 +12,7 @@ There are two table:
     * noteContent
     * noteDate
     
-##Admin Account
+## Admin Account
 Admin account informations is shown at below. There is no any privilege to Admin. It can also be thought of as a test user.
     
 |   | userId   | username  | password |   email  |
