@@ -1,5 +1,10 @@
 All the data stored in this file with this tables.
 
+## Installation
+
+You can import the sql file with using *phpmyadmin*. 
+> Table Name : notex
+
 There are two table: 
 ## Users Table
 
@@ -25,4 +30,4 @@ It contains the data of the notes that user saved. We can get the spesific note 
     * noteTitle
     * noteContent
     * noteDate
-    
+
