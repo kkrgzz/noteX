@@ -12,3 +12,6 @@ There are two table:
     * noteContent
     * noteDate
     
+|   | userId   | username  | password |   email  |
+| --|:--------:| ---------:| --------:| --------:|
+| 1 | 1        | kkrgzz    | 123456   | ex@ex.com|
