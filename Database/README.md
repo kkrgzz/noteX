@@ -6,9 +6,9 @@ There are two table:
     * email
     
   - Notes
-    *noteId
-    *noteOwner
-    *noteTitle
-    *noteContent
-    *noteDate
+    * noteId
+    * noteOwner
+    * noteTitle
+    * noteContent
+    * noteDate
     
