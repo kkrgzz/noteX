@@ -26,9 +26,9 @@ class dbProcess
 
   function connDB(){
       $host       = "localhost";
-      $dbname     = "newshine_noteX";
-      $username   = "newshine_noteXAd";
-      $password   = "4KYWiMJ7497aJ";
+      $dbname     = "notex";
+      $username   = "root";
+      $password   = "";
 
       try {
           $this->db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
