@@ -136,14 +136,14 @@ class dbProcess
     if(empty($this->fetch)){
 
       //Check for is mail address already taken?
-      $this->selectSingleData($table, "mail", $mail);
+      $this->selectSingleData($table, "email", $mail);
 
       if(empty($this->fetch)){
 
         $columnNames = "
           username = ?,
           password = ?,
-          mail = ?
+          email = ?
         ";
 
         $values = array($username, $password, $mail);
