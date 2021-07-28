@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">noteXGithub</string>
+
+    <string name="error">Error!</string>
+    <!--
+        Login Page Toast Strings
+    -->
+    <string name="empty_fields_notification">Please fill all the blanks!</string>
+    <string name="username_or_password_not_correct_message">Please check your Username or Password again.</string>
+    <string name="login_successful_message">Login Successful</string>
+    <string name="double_back_notification">Please click back again to exit!</string>
+
+    <!--
+        Register Page Toast Strings
+    -->
+    <string name="passwords_not_match">Passwords do not match!</string>
+    <string name="email_not_valid">Email is not valid!</string>
+    <string name="registration_successful">Registration Successful</string>
+    <string name="registration_failed">Registration failed, please try again.</string>
+
+    <!--
+        Login and Register Activities Strings
+    -->
+    <string name="sign_up_activity_title">Sign Up</string>
+    <string name="edit_text_username_text">Username</string>
+    <string name="edit_text_email_text">Email</string>
+    <string name="edit_text_password_text">Password</string>
+    <string name="edit_text_password_again_text">Password Again</string>
+    <string name="sign_up_button_text">Sign Up</string>
+    <string name="create_account_text_clickable">Create Account</string>
+    <string name="login_text_clickable">Login</string>
+    <string name="did_you_already_have_an_account">Did you already have an account?</string>
+    <string name="don_t_have_an_account_yet">Do not have an account yet?</string>
+</resources>

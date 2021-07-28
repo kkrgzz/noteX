@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:background="@color/charcoal"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/sign_up_activity_title"
+            android:fontFamily="@font/ubuntubold"
+            android:textSize="30sp"
+            android:textColor="@color/orange_yellow_crayola"/>
+
+        <View
+            android:layout_width="300dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/divider"/>
+
+        <EditText
+            android:id="@+id/usernameET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:hint="@string/edit_text_username_text"
+            android:textColorHint="@color/charcoal_700"
+            android:fontFamily="@font/ubunturegular"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/charcoal_700"/>
+
+        <EditText
+            android:id="@+id/emailET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:hint="@string/edit_text_email_text"
+            android:textColorHint="@color/charcoal_700"
+            android:fontFamily="@font/ubunturegular"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/charcoal_700"/>
+
+        <EditText
+            android:id="@+id/passwordET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:hint="@string/edit_text_password_text"
+            android:textColorHint="@color/charcoal_700"
+            android:fontFamily="@font/ubunturegular"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/charcoal_700"/>
+
+        <EditText
+            android:id="@+id/passwordAgainET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:hint="@string/edit_text_password_again_text"
+            android:textColorHint="@color/charcoal_700"
+            android:fontFamily="@font/ubunturegular"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/charcoal_700"/>
+
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/ubuntubold"
+            android:textSize="16sp"
+            android:text="@string/sign_up_button_text"
+            android:textColor="@color/charcoal_700"
+            android:backgroundTint="@color/burnt_sienna"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/ubuntulight"
+            android:textColor="@color/white"
+            android:text="@string/did_you_already_have_an_account"/>
+
+        <TextView
+            android:id="@+id/turnLoginActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/ubuntubold"
+            android:textColor="@color/orange_yellow_crayola"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:text="@string/login_text_clickable"
+            android:onClick="startLoginActivity"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
