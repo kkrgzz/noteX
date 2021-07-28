@@ -4,20 +4,6 @@ include($db_location);
 $conn = new dbProcess();
 $userTableName = "users";
 
-if(isset($_POST['deneme'])){
-  if($_POST['deneme'] == "true"){
-    $kemal = $_POST['username'];
-    $karagoz = $_POST['password'];
-    $temp = array();
-    $temp['kullaniciadi'] = $kemal;
-    $temp['sifre'] = $karagoz;
-    $user = array();
-
-    array_push($user, $temp);
-    echo json_encode($user);
-  }
-}
-
 /* 
     Login Operation
     Android app will send a POST request which called 'login'
@@ -29,7 +15,7 @@ if(isset($_POST['login'])){
             $username = $_POST['username'];
             $password = $_POST['password'];
           
-            if($conn->logIn($tablename, $username, $password)){
+            if($conn->logIn($userTableName, $username, $password)){
           
               $db = $conn->connDB();
               $query = $db->query("SELECT * FROM $userTableName WHERE username = '$username' ", PDO::FETCH_ASSOC);
@@ -37,10 +23,10 @@ if(isset($_POST['login'])){
           
               foreach ($query as $row) {
                 $temp = array();
-                $temp['loginStatus'] = "success";
-                $temp['userId'] = $row['userid'];
-                $temp['username'] = $row['username'];
-                $temp['mail'] = $row['mail'];
+                $temp['loginStatus']  = "success";
+                $temp['userId']       = $row['userId'];
+                $temp['username']     = $row['username'];
+                $temp['mail']         = $row['email'];
                 array_push($user, $temp);
               }
           
@@ -67,10 +53,10 @@ if(isset($_POST['login'])){
 */
 if(isset($_POST['register'])){
     if($_POST['register'] == "true"){
-        if(isset($_POST['mail']) && isset($_POST['username']) && isset($_POST['password'])){
+        if(isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password'])){
             $username = $_POST['username'];
             $password = $_POST['password'];
-            $mail = $_POST['mail'];
+            $mail = $_POST['email'];
           
             if($conn->signUp($userTableName, $username, $password, $mail)){
               echo "success";
