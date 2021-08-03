@@ -67,6 +67,7 @@
 
               <hr>
                 <input id="noteOwnerID" type="hidden" name="noteOwner" value="<?php echo $_SESSION['userId']; ?>">
+                <input id = "noteDate" type="hidden" name = "noteDate" value = "<?php echo date('d.m.Y - H:i:s'); ?>">
 
                 <label for="noteTitleInput">Note Title: <span class="existingTitleLength">50</span></label>
                 <input id="noteTitleInput" class="noteTitleInput form-control mb-2 " type="text" name="noteTitle" placeholder="Note Title" maxlength="50">
@@ -76,10 +77,12 @@
 
                 <button class="btn btn-outline-dark w-100 mb-2" id="submit-add-note-button" disabled>Add Note</button>
 
+                <!--
                 <div class="d-flex flex-row justify-content-between">
                   <button type="button" class="btn btn-outline-success w-100" id="liveToastBtn">Add</button>
                   <button type="button" class="btn btn-outline-danger w-100" id="liveToastBtn2">Delete</button>
                 </div>
+-->
             </div>
           </div>
 
