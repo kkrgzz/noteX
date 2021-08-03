@@ -691,6 +691,10 @@ iframe {
   transition: all 0.5s;
 }
 
+.container-fluid > * {
+  user-select: none;
+}
+
 @media only screen and (max-width: 600px) {
   .add-note-card{
     width: 18rem;
