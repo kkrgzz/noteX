@@ -1,4 +1,6 @@
 <?php
+session_start();
+ob_start();
 // Check for is user logged in or not.
 if(isset($_POST['loginStatus'])){
   if($_POST['loginStatus'] == "success"){
@@ -8,7 +10,15 @@ if(isset($_POST['loginStatus'])){
     include($db_location);
     $conn = new dbProcess();
   }else die("failed");
-}else die("failed");
+}else{
+  if(isset($_POST['submitAddNote'])){
+    $db_location = "../db/db.php";
+    $notesTableName = "notes";
+
+    include($db_location);
+    $conn = new dbProcess();
+  }else die("failed");
+};
 
 
 /*
@@ -35,6 +45,26 @@ if(isset($_POST['addNote'])){
     
     }else echo "failed";
   }else echo "failed";
+}
+
+/*
+  Add Note From WEB Application
+*/
+if(isset($_POST['submitAddNote'])){
+  $noteTitle = $_POST['noteTitle'];
+  $noteContent = $_POST['noteContent'];
+  $noteOwner = $_SESSION['userId'];
+  $noteDate = date("d.m.Y - H:i:s");
+
+
+  //Make here with unloading page using AJAX.
+  if($conn->addNewNote($notesTableName, $noteTitle, $noteContent, $noteOwner, $noteDate)){
+    echo "success";
+    //header( "refresh:0.1; url=../../notes/" );
+  }else{
+    echo "failed";
+  }
+  
 }
 
 /*
@@ -115,4 +145,6 @@ if(isset($_POST['deleteNote'])){
     }else echo "failed";
   }else echo "failed";
 }
+
+ob_end_flush();
 ?>
