@@ -1,4 +1,3 @@
-
 (function ($) {
     "use strict";
 
@@ -97,6 +96,12 @@
       var existingTitleLength = maxTitleTextLen - titleTextLen;
       $(".existingTitleLength").text(existingTitleLength);
 
+      if($(".noteTitleInput").val().length >= 5){
+        $("#submit-add-note-button").prop("disabled", false);
+        }else{
+            $("#submit-add-note-button").prop("disabled", true);
+        }
+
     });
 
     $(".noteContentInput").keyup(function(){
@@ -107,7 +112,15 @@
       var existingTitleLength = maxTitleTextLen - titleTextLen;
       $(".existingContentLength").text(existingTitleLength);
 
+      if($(".noteContentInput").val().length >= 5){
+        $("#submit-add-note-button").prop("disabled", false);
+        }else{
+            $("#submit-add-note-button").prop("disabled", true);
+        }
+
     });
+
+
 
     $(".show-add-note-section-button").click(function(){
       $(".show-add-note-section-area").css("visibility", "hidden");
@@ -133,4 +146,34 @@
     bsAlert.show();//show it
     });
 
+
+    //LOAD NOTES EVERY 2 SECONDS
+    setInterval(function(){
+        $(".container-fluid").load("getNotes.php");
+    }, 200);
+
+    //INSERT NOTE WITH AJAX WITHOUT REFRESH PAGE
+    $("#submit-add-note-button").click(function(){
+        var noteOwner = $("#noteOwnerID").val();
+        var noteTitle = $("#noteTitleInput").val();
+        var noteContent = $("#noteContentInput").val();
+
+        $.ajax({
+            url: '../src/dbOperations/noteOperations.php',
+            method: 'POST',
+            data: {
+                "submitAddNote" : "true",
+                "noteTitle" : noteTitle,
+                "noteContent" : noteContent, 
+                "noteOwner" : noteOwner,
+                "noteDate" : "deneme"
+            }, 
+            success: function(response){
+                $("#noteTitleInput").val("");
+                $("#noteContentInput").val("");
+                $(".existingContentLength").text("500");
+                $(".existingTitleLength").text("50");
+            }
+        });
+    });
 })(jQuery);
