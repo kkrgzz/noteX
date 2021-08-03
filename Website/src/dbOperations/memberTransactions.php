@@ -1,4 +1,5 @@
 <?php
+session_start();
 $db_location = "../db/db.php";
 include($db_location);
 $conn = new dbProcess();
@@ -46,6 +47,32 @@ if(isset($_POST['login'])){
           }
     }else echo "failed";
 }
+
+/*
+  Login Operation From Browser
+*/
+if(isset($_POST['loginWEB'])){
+    if($_POST['loginWEB'] == "loginFromWeb"){
+      if(isset($_POST['username']) && isset($_POST['password'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        if($conn->logIn($userTableName, $username, $password)){
+          $db = $conn->connDB();
+          $query = $db->query("SELECT * FROM $userTableName WHERE username = '$username' ", PDO::FETCH_ASSOC);
+          foreach ($query as $row) {
+            $_SESSION['userId'] = $row['userId'];
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['email'] = $row['email'];
+            
+            header( "refresh:0.1; url=../../notes/" );
+          }
+
+        }else echo "<br>WEB login failed.";
+      }
+    }
+}
+
+
 
 /* 
     Register Operation
