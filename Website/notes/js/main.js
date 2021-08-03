@@ -115,6 +115,12 @@
     });
 
     //TOAST JAVASCRIPT CODES
+    $("#logoutToastMessage").click(function(){
+        var myAlert =document.getElementById('logoutToast');//select id of toast
+      var bsAlert = new bootstrap.Toast(myAlert);//inizialize it
+      bsAlert.show();//show it
+      });
+    
     $("#liveToastBtn").click(function(){
       var myAlert =document.getElementById('toast1');//select id of toast
     var bsAlert = new bootstrap.Toast(myAlert);//inizialize it
