@@ -157,6 +157,7 @@
         var noteOwner = $("#noteOwnerID").val();
         var noteTitle = $("#noteTitleInput").val();
         var noteContent = $("#noteContentInput").val();
+        var noteDate = $("#noteDate").val();
 
         $.ajax({
             url: '../src/dbOperations/noteOperations.php',
@@ -166,7 +167,7 @@
                 "noteTitle" : noteTitle,
                 "noteContent" : noteContent, 
                 "noteOwner" : noteOwner,
-                "noteDate" : "deneme"
+                "noteDate" : noteDate
             }, 
             success: function(response){
                 $("#noteTitleInput").val("");
