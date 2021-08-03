@@ -2,6 +2,7 @@
 session_start();
 $db_location = "../db/db.php";
 include($db_location);
+include("../config/constants.php");
 $conn = new dbProcess();
 $userTableName = "users";
 
@@ -67,7 +68,10 @@ if(isset($_POST['loginWEB'])){
             header( "refresh:0.1; url=../../notes/" );
           }
 
-        }else echo "<br>WEB login failed.";
+        }else {
+          header( "refresh:4; url=../../login/" );
+          die(EXITTEXT);
+        }
       }
     }
 }
