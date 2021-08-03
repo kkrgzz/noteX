@@ -164,21 +164,20 @@ class dbProcess
 
 
 
-  function addNewNote($tableName, $title, $content, $owner, $date, $sortNumber){
-
+  function addNewNote($tableName, $title, $content, $owner, $date){
+    
     $title = $this->prepareData($title);
     $content = $this->prepareData($content);
 
     $columnNames = "
       noteTitle = ?,
-      noteText = ?,
+      noteContent = ?,
       noteOwner = ?,
-      noteDate = ?,
-      noteSort = ?
+      noteDate = ?
     ";
-
-    $values = array($title, $content, $owner, $date, $sortNumber);
-
+    
+    $values = array($title, $content, $owner, $date);
+    
     if($this->insert($tableName, $columnNames, $values)){
 
       return true;
