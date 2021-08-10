@@ -1,6 +1,46 @@
 (function ($) {
     "use strict";
 
+    /*==================================================================
+    [ Notes Operations - Add Note and Receive Note ]*/
+
+    // Receive notes on startup
+    $(".container-fluid").load("getNotes.php");
+
+    // Receive notes every 5 minutes
+    setInterval(function(){
+        $(".container-fluid").load("getNotes.php");
+    }, 2000);
+
+    // Insert note with AJAX without refresh page
+    $("#submit-add-note-button").click(function(){
+        var noteOwner = $("#noteOwnerID").val();
+        var noteTitle = $("#noteTitleInput").val();
+        var noteContent = $("#noteContentInput").val();
+        var noteDate = $("#noteDate").val();
+
+        $.ajax({
+            url: '../src/dbOperations/noteOperations.php',
+            method: 'POST',
+            data: {
+                "submitAddNote" : "true",
+                "noteTitle" : noteTitle,
+                "noteContent" : noteContent,
+                "noteOwner" : noteOwner,
+                "noteDate" : noteDate
+            },
+            success: function(response){
+                $("#noteTitleInput").val("");
+                $("#noteContentInput").val("");
+                $(".existingContentLength").text("500");
+                $(".existingTitleLength").text("50");
+
+                // Receive notes again. This makes new note visible and don't need to wait 5 seconds.
+                $(".container-fluid").load("getNotes.php");
+            }
+        });
+    });
+
 
     /*==================================================================
     [ Focus input ]*/
@@ -133,7 +173,7 @@
       var bsAlert = new bootstrap.Toast(myAlert);//inizialize it
       bsAlert.show();//show it
       });
-    
+
     $("#liveToastBtn").click(function(){
       var myAlert =document.getElementById('toast1');//select id of toast
     var bsAlert = new bootstrap.Toast(myAlert);//inizialize it
@@ -147,34 +187,5 @@
     });
 
 
-    //LOAD NOTES EVERY 2 SECONDS
-    setInterval(function(){
-        $(".container-fluid").load("getNotes.php");
-    }, 200);
 
-    //INSERT NOTE WITH AJAX WITHOUT REFRESH PAGE
-    $("#submit-add-note-button").click(function(){
-        var noteOwner = $("#noteOwnerID").val();
-        var noteTitle = $("#noteTitleInput").val();
-        var noteContent = $("#noteContentInput").val();
-        var noteDate = $("#noteDate").val();
-
-        $.ajax({
-            url: '../src/dbOperations/noteOperations.php',
-            method: 'POST',
-            data: {
-                "submitAddNote" : "true",
-                "noteTitle" : noteTitle,
-                "noteContent" : noteContent, 
-                "noteOwner" : noteOwner,
-                "noteDate" : noteDate
-            }, 
-            success: function(response){
-                $("#noteTitleInput").val("");
-                $("#noteContentInput").val("");
-                $(".existingContentLength").text("500");
-                $(".existingTitleLength").text("50");
-            }
-        });
-    });
 })(jQuery);
