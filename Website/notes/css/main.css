@@ -510,8 +510,18 @@ iframe {
   user-select: none;
 }
 
+.notes100-pencil{
+  color: #555555;
+  user-select: none;
+}
+
+.notes100-pencil:hover{
+  color: #fff15f;
+  
+}
+
 .notes100-divider{
-  border-radius: 3px;
+  
   width: 100%;
   height: 6px;
   background-color: #073b4c;
