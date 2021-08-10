@@ -24,12 +24,15 @@ foreach ($query as $row) {
 \\\START///
 Note content here, the number and text is shown here. -->
 <div class="row">
-<div class="notes100-number col-1 fs-30 d-flex align-items-center">
-    <?php echo $count; ?>
-</div>
-<div class="notes100 col-11">
-    <?php echo $row['noteTitle']; ?>
-</div>
+    <div class="notes100-number col-1 fs-30 d-flex align-items-center">
+        <?php echo $count; ?>
+    </div>
+    <div class="notes100 col-9">
+        <?php echo $row['noteTitle']; ?>
+    </div>
+    <div class="notes100-pencil fs-30 col-2 d-flex align-items-center">
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+    </div>
 </div>
 <!-- \\\FINISH/// -->
 
@@ -40,8 +43,8 @@ if($count <= $queryCount):
 
 ?>
 <!-- Note Divider Start -->
-<div class="row px-5 py-2">
-<div class="notes100-divider"></div>
+<div class="row py-2">
+    <div class="notes100-divider"></div>
 </div>
 <!-- Note Divider Finish -->
 <?php
