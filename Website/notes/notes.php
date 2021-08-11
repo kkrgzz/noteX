@@ -32,7 +32,7 @@
 
     <div class="limiter">
       <div class="container-login100" style="background-image: url('images/bg-pattern.png');">
-        
+
         <div class="notes100-signout-button-area justify-content-end">
           <form method="post">
             <button name="logout" value="true" class="notes100-button-shape px-2" id="logoutToastMessage">
@@ -71,7 +71,7 @@
 
                 <label for="noteTitleInput">Note Title: <span class="existingTitleLength">50</span></label>
                 <input id="noteTitleInput" class="noteTitleInput form-control mb-2 " type="text" name="noteTitle" placeholder="Note Title" maxlength="50">
-                
+
                 <label for="noteContentInput">Note Content: <span class="existingContentLength">500</span></label>
                 <textarea id="noteContentInput" class="noteContentInput form-control mb-2" name="noteContent" rows="5" cols="1" placeholder="Note Content" maxlength="500"></textarea>
 
@@ -95,6 +95,24 @@
         </div>
 
       </div>
+
+      <div class="modal fade" id="noteDetailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalNoteTitle">Note Title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modalNoteContent">
+              Note Content
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Delete</button>  
+              <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!--This div is determining the position of toast.-->
@@ -117,16 +135,6 @@
           <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
       </div>
-
-      <div id="toast2" class="toast hide align-items-center text-white bg-danger border-0 my-2 w-100" style="max-width: 400px;" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-          <div class="toast-body">
-          The another Toast message. Note deleted succesfully.
-         </div>
-          <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-      </div>
-
     </div>
 
     <!--===============================================================================================-->
