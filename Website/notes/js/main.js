@@ -4,13 +4,17 @@
     /*==================================================================
     [ Notes Operations - Add Note and Receive Note ]*/
 
-    // Receive notes on startup
-    $(".container-fluid").load("getNotes.php");
+    function receiveNotes(){
+      $(".container-fluid").load("getNotes.php");
+    }
 
-    // Receive notes every 5 minutes
+    // Receive notes on startup
+    receiveNotes();
+
+    // Receive notes every 5 seconds
     setInterval(function(){
-        $(".container-fluid").load("getNotes.php");
-    }, 2000);
+        receiveNotes();
+    }, 5000);
 
     // Insert note with AJAX without refresh page
     $("#submit-add-note-button").click(function(){
@@ -36,10 +40,25 @@
                 $(".existingTitleLength").text("50");
 
                 // Receive notes again. This makes new note visible and don't need to wait 5 seconds.
-                $(".container-fluid").load("getNotes.php");
+                receiveNotes();
             }
         });
     });
+
+    $(".container-fluid").on('click', '.noteDetailsButton', function(){
+        var noteId = $(this).attr("noteDetailsID");
+        var noteOwner = $(this).attr("noteDetailsOwner");
+        var noteTitle = $(this).attr("noteDetailsTitle");
+        var noteContent = $(this).attr("noteDetailsContent");
+        var noteDate = $(this).attr("noteDetailsDate");
+        
+        $("#modalNoteTitle").text(noteTitle);
+        $("#modalNoteContent").text(noteContent);
+    });
+    /*==================================================================
+    [ Note Details Modal Operations ]*/
+    
+
 
 
     /*==================================================================
@@ -160,8 +179,6 @@
 
     });
 
-
-
     $(".show-add-note-section-button").click(function(){
       $(".show-add-note-section-area").css("visibility", "hidden");
       $(".add-note-section").css("visibility", "visible");
@@ -189,3 +206,4 @@
 
 
 })(jQuery);
+
