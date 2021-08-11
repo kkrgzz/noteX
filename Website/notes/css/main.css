@@ -1,7 +1,3 @@
-
-
-
-
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
@@ -510,18 +506,7 @@ iframe {
   user-select: none;
 }
 
-.notes100-pencil{
-  color: #555555;
-  user-select: none;
-}
-
-.notes100-pencil:hover{
-  color: #fff15f;
-  
-}
-
 .notes100-divider{
-  
   width: 100%;
   height: 6px;
   background-color: #073b4c;
@@ -704,6 +689,14 @@ iframe {
 .container-fluid > * {
   user-select: none;
 }
+
+.note-block{
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
 
 @media only screen and (max-width: 600px) {
   .add-note-card{
